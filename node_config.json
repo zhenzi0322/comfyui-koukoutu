@@ -1,7 +1,7 @@
 {
     "name": "Koukoutu ComfyUI Nodes",
     "description": "ComfyUI nodes for Koukoutu API integration including background removal",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "author": "Koukoutu",
     "dependencies": [
         "requests",

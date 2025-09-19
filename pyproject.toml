@@ -31,7 +31,7 @@ Documentation = "https://github.com/zhenzi0322/comfyui-koukoutu/wiki"
 [tool.comfy]
 PublisherId = "zhenzi0322"
 DisplayName = "comfyui-koukoutu"
-Icon = ""
+Icon = "images/logo.ico"
 includes = [] 
 # "requires-comfyui" = ">=1.0.0"  # ComfyUI version compatibility
 

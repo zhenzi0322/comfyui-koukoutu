@@ -47,7 +47,7 @@
 
 ## 工作流下载
 
-[koukoutu_workflow工作流](https://github.com/zhenzi0322/comfyui-koukoutu/blob/master/koukoutu_workflow.json)
+[koukoutu_workflow工作流](https://github.com/zhenzi0322/comfyui-koukoutu/blob/master/workflows/koukoutu_workflow.json)
 
 ### 背景移除节点
 
