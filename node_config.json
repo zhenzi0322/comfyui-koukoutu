@@ -1,0 +1,19 @@
+{
+    "name": "Koukoutu ComfyUI Nodes",
+    "description": "ComfyUI nodes for Koukoutu API integration including background removal",
+    "version": "1.0.0",
+    "author": "Koukoutu",
+    "dependencies": [
+        "requests",
+        "Pillow",
+        "numpy",
+        "torch"
+    ],
+    "nodes": {
+        "KoukoutuBackgroundRemoval": {
+            "display_name": "Koukoutu Background Removal",
+            "description": "Remove background from images using Koukoutu API",
+            "category": "image/koukoutu"
+        }
+    }
+}
