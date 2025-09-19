@@ -1,7 +1,7 @@
 [project]
 name = "koukoutu"
 description = "The ComfyUI node integrated with Koukoutu API supports background removal and print cutting functions."
-version = "1.0.3"
+version = "1.0.4"
 license = {file = "LICENSE"} 
 
 [project.urls]
@@ -10,4 +10,4 @@ Repository = "https://github.com/zhenzi0322/comfyui-koukoutu"
 [tool.comfy]
 PublisherId = "zhenzi0322"
 DisplayName = "comfyui-koukoutu"
-Icon = "images/logo.ico"
+Icon = "https://raw.githubusercontent.com/zhenzi0322/comfyui-koukoutu/refs/heads/master/images/logo.ico"
