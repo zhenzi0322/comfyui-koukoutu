@@ -153,6 +153,10 @@
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
 
+> ![](./images/image-watermark.png)
+>
+> [工作流](./workflows/image-watermark.json)
+
 ---
 
 ### 7. AI 生成阴影图功能（AI Shadow）
@@ -169,6 +173,10 @@
 | skip_error | BOOLEAN | 否 | 跳过错误（默认开） |
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
+
+> ![](./images/image-shadow-v3.png)
+>
+> [工作流](./workflows/image-shadow-v3.json)
 
 ---
 
