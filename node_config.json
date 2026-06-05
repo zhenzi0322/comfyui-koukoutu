@@ -49,6 +49,11 @@
             "display_name": "Koukoutu Upscale",
             "description": "Upscale and enhance image clarity using Koukoutu async API",
             "category": "image/koukoutu"
+        },
+        "KoukoutuOutpaint": {
+            "display_name": "Koukoutu Outpaint",
+            "description": "Extend image edges (outpaint) using Koukoutu async API",
+            "category": "image/koukoutu"
         }
     }
 }

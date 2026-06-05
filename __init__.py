@@ -71,6 +71,14 @@ try:
 except Exception as e:
     print(f"Failed to load Upscale node: {e}")
 
+try:
+    from .nodes.outpaint import KoukoutuOutpaint
+    NODE_CLASS_MAPPINGS["KoukoutuOutpaint"] = KoukoutuOutpaint
+    NODE_DISPLAY_NAME_MAPPINGS["KoukoutuOutpaint"] = "抠抠图-扩图功能"
+    print("Koukoutu Outpaint node loaded successfully")
+except Exception as e:
+    print(f"Failed to load Outpaint node: {e}")
+
 if not NODE_CLASS_MAPPINGS:
     print("No Koukoutu nodes could be loaded. Please check your dependencies.")
 
