@@ -71,6 +71,10 @@
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
 
+> ![](./images/stamp-crop.png)
+>
+> [工作流](./workflows/stamp_crop.json)
+
 ---
 
 ### 3. 图生图功能（Image To Image）
@@ -168,6 +172,11 @@
 | skip_error | BOOLEAN | 否 | 跳过错误（默认开） |
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
+
+> ![示例效果图](./images//upscale2stamp.png)
+>
+> [下载工作流](workflows/upscale2stamp.json)
+
 
 ---
 
