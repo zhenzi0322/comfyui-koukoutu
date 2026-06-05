@@ -93,6 +93,10 @@
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
 
+> ![](./images/image-to-image.png)
+> 
+> [工作流](./workflows/image-to-image.json)
+
 ---
 
 ### 4. 标准印花提取功能（Image Extract）
@@ -110,6 +114,10 @@
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
 
+> ![](./images/image-extract.png)
+>
+> [工作流](./workflows/image-extract.json)
+
 ---
 
 ### 5. 中阶印花提取功能（Image Extract V2）
@@ -126,6 +134,10 @@
 | skip_error | BOOLEAN | 否 | 跳过错误（默认开） |
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
+
+> ![](./images/image-extract-v2.png)
+>
+> [工作流](./workflows/image-extract-v2.json)
 
 ---
 
