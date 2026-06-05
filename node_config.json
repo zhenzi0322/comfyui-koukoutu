@@ -14,6 +14,41 @@
             "display_name": "Koukoutu Background Removal",
             "description": "Remove background from images using Koukoutu API",
             "category": "image/koukoutu"
+        },
+        "KoukoutuStampCrop": {
+            "display_name": "Koukoutu Stamp Crop",
+            "description": "Locate and crop stamps/patterns from images using Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuImageToImage": {
+            "display_name": "Koukoutu Image To Image",
+            "description": "Generate new images from an input image using prompts via Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuImageExtract": {
+            "display_name": "Koukoutu Image Extract",
+            "description": "Extract stamps/patterns from images using Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuImageExtractV2": {
+            "display_name": "Koukoutu Image Extract V2",
+            "description": "Mid-level stamp/pattern extraction from images using Koukoutu async API (v2 model)",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuWatermarkRemoval": {
+            "display_name": "Koukoutu Watermark Removal",
+            "description": "Automatically remove watermarks from images using Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuAIShadow": {
+            "display_name": "Koukoutu AI Shadow",
+            "description": "Generate AI shadow effects for transparent PNG images using Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuUpscale": {
+            "display_name": "Koukoutu Upscale",
+            "description": "Upscale and enhance image clarity using Koukoutu async API",
+            "category": "image/koukoutu"
         }
     }
 }

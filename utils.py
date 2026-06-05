@@ -8,6 +8,9 @@ from PIL import Image
 import io
 import tempfile
 import os
+import requests
+
+from .config import CODE_DICT as code_dict  # 兼容各节点原有 import
 
 
 def tensor_to_pil(tensor):
@@ -136,7 +139,6 @@ def handle_api_response(response):
             raise Exception(f"API 错误: {json_response['error']}")
         elif 'url' in json_response:
             # Download image from URL
-            import requests
             image_response = requests.get(json_response['url'], timeout=30)
             if image_response.status_code != 200:
                 raise Exception(f"下载处理后的图像失败: {image_response.status_code}")

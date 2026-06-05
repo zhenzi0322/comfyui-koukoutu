@@ -1,0 +1,226 @@
+{
+  "id": "57097617-cf6e-4337-96e5-4c5531f277da",
+  "revision": 0,
+  "last_node_id": 7,
+  "last_link_id": 15,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [
+        888.2959092156835,
+        464.3013273184867
+      ],
+      "size": [
+        253.99902589192754,
+        272.90660238443013
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.10.0",
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.1"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        -205.19554972594162,
+        369.52269721541546
+      ],
+      "size": [
+        270,
+        314.00000000000006
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.10.0",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.1"
+        }
+      },
+      "widgets_values": [
+        "CKpXjm0t.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ShowText|pysssss",
+      "pos": [
+        551.8606349243329,
+        534.1190744804364
+      ],
+      "size": [
+        210,
+        92.73616416256414
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.1"
+        }
+      },
+      "widgets_values": [
+        "成功"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "KoukoutuImageExtract",
+      "pos": [
+        162.02846656153505,
+        356.56157674615014
+      ],
+      "size": [
+        340.0987798962784,
+        176.33662599654264
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            14
+          ]
+        },
+        {
+          "name": "message",
+          "type": "STRING",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "koukoutu",
+        "ver": "0d1eefad2ebba8a869315d40d189858a3cd0540f",
+        "Node name for S&R": "KoukoutuImageExtract",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.1"
+        }
+      },
+      "widgets_values": [
+        "",
+        "服装",
+        "1k",
+        "3:4",
+        true
+      ]
+    }
+  ],
+  "links": [
+    [
+      13,
+      1,
+      0,
+      7,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      7,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      15,
+      7,
+      1,
+      5,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 1.1671841070450009,
+      "offset": [
+        454.8363188220337,
+        44.743239730992606
+      ]
+    },
+    "frontendVersion": "1.39.19"
+  },
+  "version": 0.4
+}

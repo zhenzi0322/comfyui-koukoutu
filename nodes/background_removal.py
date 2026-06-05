@@ -2,30 +2,22 @@ import io
 import requests
 from PIL import Image
 
+from ..config import (
+        SYNC_API_URL,
+        SYNC_AUTH_PREFIX,
+        RETRY_STATUS_CODES,
+        MAX_RETRY_COUNT,
+        CREATE_REQUEST_TIMEOUT,
+    )
 from ..utils import (
         tensor_to_pil, 
         pil_to_tensor, 
         save_temp_image, 
         cleanup_temp_file,
-        validate_api_key
+        validate_api_key,
+        code_dict
     )
 
-code_dict = {
-    401: "无效的 API Key, 请检查您的 Key 是否正确。查看KEY地址: https://www.koukoutu.com/user/dev",
-    200: "成功",
-    403: "API密钥无效或额度不足",
-    404: "未找到",
-    413: "文件太大",
-    415: "不支持的文件格式",
-    422: "参数错误",
-    429: "请求过于频繁",
-    500: "服务器内部错误",
-    502: "服务暂时不可用",
-    503: "服务暂时不可用",
-    409: "积分不足",
-    406: "文件大小超过15M",
-    407: "图片分辨率小于70",
-}
 
 class KoukoutuBackgroundRemoval:
     """
@@ -64,10 +56,6 @@ class KoukoutuBackgroundRemoval:
                 }),
                 "border": (["不增强", "标准增强", "高度增强"], {
                     "default": "不增强"
-                }),
-                "output_response": ("STRING", {
-                    "default": 'file',
-                    "hidden": True
                 })
             }
         }
@@ -78,11 +66,12 @@ class KoukoutuBackgroundRemoval:
     CATEGORY = "image/koukoutu"
     DESCRIPTION = "使用 Koukoutu API 移除图像背景"
     
-    def remove_background(self, image, api_key, model_key_name, output_format="png", crop=False, stamp_crop=False, border='不增强', output_response='file', error_num=0):
+    def remove_background(self, image, api_key, model_key_name, output_format="png", crop=False, stamp_crop=False, border='不增强', error_num=0):
         """
         Remove background from image using Koukoutu API
         """
         try:
+            output_response='file'
             # Validate API key
             validated_api_key = validate_api_key(api_key)
             # Convert ComfyUI image tensor to PIL Image
@@ -93,10 +82,10 @@ class KoukoutuBackgroundRemoval:
             
             try:
                 # Prepare API request
-                api_url = "https://sync.koukoutu.com/v1/create"
+                api_url = SYNC_API_URL
                 
                 headers = {
-                    'Authorization': f"Bearer {validated_api_key}"
+                    'Authorization': f"{SYNC_AUTH_PREFIX}{validated_api_key}"
                 }
 
                 model_key_dict = {
@@ -128,13 +117,13 @@ class KoukoutuBackgroundRemoval:
                     headers=headers,
                     data=data,
                     files=files,
-                    timeout=60
+                    timeout=CREATE_REQUEST_TIMEOUT
                 )
                 content_type = response.headers.get('content-type', '')
                 if 'application/json' in content_type and output_response == 'file':
                     json_response = response.json()
                     code = json_response.get('code', 200)
-                    if code in [500, 502, 503, 504] and error_num <= 5:
+                    if code in RETRY_STATUS_CODES and error_num <= MAX_RETRY_COUNT:
                         return self.remove_background(image, api_key, model_key_name, output_format, crop, stamp_crop, border, output_response, error_num + 1)
                     else:
                         raise Exception(code_dict.get(code, f"API 错误: {json_response.get('message', '未知错误')}"))
@@ -147,7 +136,7 @@ class KoukoutuBackgroundRemoval:
                 cleanup_temp_file(temp_path)
                 
         except requests.RequestException as e:
-            if error_num <= 5:
+            if error_num <= MAX_RETRY_COUNT:
                 return self.remove_background(image, api_key, model_key_name, output_format, crop, stamp_crop, border, output_response, error_num + 1)
             raise Exception(f"网络请求错误: {str(e)}")
         except Exception as e:
