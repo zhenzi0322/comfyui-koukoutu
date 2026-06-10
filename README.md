@@ -1,4 +1,9 @@
-# Koukoutu ComfyUI Nodes
+<div align="center">
+  <img src="https://res.cloudinary.com/anuraghazra/image/upload/v1594908242/logo_ccswme.svg" width="100px" alt="GitHub Readme Stats" />
+  <h1 style="font-size: 28px; margin: 10px 0;">ComfyUI-koukoutu</h1>
+</div>
+
+
 
 一个为 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 提供 [Koukoutu API](https://www.koukoutu.com) 集成的节点包，涵盖抠图、印花提取、图生图、去水印、AI 阴影、高清放大等多种图像处理功能。
 
@@ -32,7 +37,7 @@
 3. 重启 ComfyUI，在 `image/koukoutu` 分类下即可看到所有节点。
 
 
-也可以直接通过`comfy node install koukoutu`进行下载。
+也可以直接通过`comfy node install koukoutu`进行安装。
 
 ## 获取 API Key
 
@@ -217,7 +222,6 @@
 | skip_error | BOOLEAN | 否 | 跳过错误（默认开） |
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
-
 
 ---
 
