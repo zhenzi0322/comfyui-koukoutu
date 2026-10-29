@@ -1,0 +1,245 @@
+{
+  "id": "57097617-cf6e-4337-96e5-4c5531f277da",
+  "revision": 0,
+  "last_node_id": 13,
+  "last_link_id": 27,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        -367.9960716583872,
+        634.7063815630368
+      ],
+      "size": [
+        270,
+        314.00000000000006
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.10.0",
+        "Node name for S&R": "LoadImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.1"
+        }
+      },
+      "widgets_values": [
+        "2992c78395f54771a15ce189a0de78a7.jpg",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "2992c78395f54771a15ce189a0de78a7.jpg",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 5,
+      "type": "ShowText|pysssss",
+      "pos": [
+        407.4182045713904,
+        990.7581042314379
+      ],
+      "size": [
+        370.21465582960514,
+        102.1605556819527
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-custom-scripts",
+        "ver": "1.2.5",
+        "Node name for S&R": "ShowText|pysssss",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.1"
+        }
+      },
+      "widgets_values": [
+        "成功，已保存: /data/hdd1/Comfyui/newComfyui/output/koukoutu_svg_20261029_174816_9242438.svg"
+      ],
+      "widgets_values_named": {
+        "text_0": "成功，已保存: /data/hdd1/Comfyui/newComfyui/output/koukoutu_svg_20261029_174816_9242438.svg"
+      }
+    },
+    {
+      "id": 9,
+      "type": "KoukoutuImageToSVG",
+      "pos": [
+        -55.4356155047052,
+        638.8358557505793
+      ],
+      "size": [
+        373.0218401875639,
+        163.28191113599098
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "svg",
+          "type": "STRING",
+          "links": [
+            27
+          ]
+        },
+        {
+          "name": "message",
+          "type": "STRING",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KoukoutuImageToSVG",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.1"
+        }
+      },
+      "widgets_values": [
+        "填写你的api key",
+        true
+      ],
+      "widgets_values_named": {
+        "api_key": "填写你的api key",
+        "skip_error": true
+      }
+    },
+    {
+      "id": 13,
+      "type": "KoukoutuSVGPreview",
+      "pos": [
+        432.1246881416507,
+        418.319855406194
+      ],
+      "size": [
+        420,
+        481
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "svg",
+          "type": "STRING",
+          "widget": {
+            "name": "svg"
+          },
+          "link": 27
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "KoukoutuSVGPreview",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "",
+        [
+          false,
+          true
+        ]
+      ],
+      "widgets_values_named": {
+        "svg": "",
+        "speak_and_recognation": [
+          false,
+          true
+        ]
+      }
+    }
+  ],
+  "links": [
+    [
+      20,
+      1,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      22,
+      9,
+      1,
+      5,
+      0,
+      "STRING"
+    ],
+    [
+      27,
+      9,
+      0,
+      13,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "ds": {
+      "scale": 1.2839025177495011,
+      "offset": [
+        686.7168527181312,
+        -259.03515711308313
+      ]
+    },
+    "frontendVersion": "1.57.6"
+  },
+  "version": 0.4
+}

@@ -1,7 +1,7 @@
 {
     "name": "Koukoutu ComfyUI Nodes",
     "description": "ComfyUI nodes for Koukoutu API integration including background removal",
-    "version": "1.0.2",
+    "version": "1.0.7",
     "author": "Koukoutu",
     "dependencies": [
         "requests",
@@ -53,6 +53,21 @@
         "KoukoutuOutpaint": {
             "display_name": "Koukoutu Outpaint",
             "description": "Extend image edges (outpaint) using Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuImageToSVG": {
+            "display_name": "Koukoutu Image To SVG",
+            "description": "Convert raster images to vector SVG using Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuImageExtractV3": {
+            "display_name": "Koukoutu Image Extract V3",
+            "description": "High-level stamp/pattern extraction with size ratio or custom width/height using Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuSVGPreview": {
+            "display_name": "Koukoutu SVG Preview",
+            "description": "Preview SVG vector graphics inside the node without any rendering dependency",
             "category": "image/koukoutu"
         }
     }

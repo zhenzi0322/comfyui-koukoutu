@@ -79,7 +79,35 @@ try:
 except Exception as e:
     print(f"Failed to load Outpaint node: {e}")
 
+try:
+    from .nodes.image_to_svg import KoukoutuImageToSVG
+    NODE_CLASS_MAPPINGS["KoukoutuImageToSVG"] = KoukoutuImageToSVG
+    # 显示名内带上核心关键词，兼容不支持 SEARCH_ALIASES 的旧版前端搜索
+    NODE_DISPLAY_NAME_MAPPINGS["KoukoutuImageToSVG"] = "抠抠图-图片转SVG功能（位图转矢量）"
+    print("Koukoutu Image To SVG node loaded successfully")
+except Exception as e:
+    print(f"Failed to load Image To SVG node: {e}")
+
+try:
+    from .nodes.image_extract_v3 import KoukoutuImageExtractV3
+    NODE_CLASS_MAPPINGS["KoukoutuImageExtractV3"] = KoukoutuImageExtractV3
+    NODE_DISPLAY_NAME_MAPPINGS["KoukoutuImageExtractV3"] = "抠抠图-高阶印花提取功能"
+    print("Koukoutu Image Extract V3 node loaded successfully")
+except Exception as e:
+    print(f"Failed to load Image Extract V3 node: {e}")
+
+try:
+    from .nodes.svg_preview import KoukoutuSVGPreview
+    NODE_CLASS_MAPPINGS["KoukoutuSVGPreview"] = KoukoutuSVGPreview
+    NODE_DISPLAY_NAME_MAPPINGS["KoukoutuSVGPreview"] = "抠抠图-SVG预览功能（矢量图预览）"
+    print("Koukoutu SVG Preview node loaded successfully")
+except Exception as e:
+    print(f"Failed to load SVG Preview node: {e}")
+
 if not NODE_CLASS_MAPPINGS:
     print("No Koukoutu nodes could be loaded. Please check your dependencies.")
 
-__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
+# 前端扩展目录（节点面板的输入控件动态显隐）
+WEB_DIRECTORY = "./web"
+
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
