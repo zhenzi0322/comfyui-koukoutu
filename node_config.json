@@ -1,7 +1,7 @@
 {
     "name": "Koukoutu ComfyUI Nodes",
     "description": "ComfyUI nodes for Koukoutu API integration including background removal",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "author": "Koukoutu",
     "dependencies": [
         "requests",
@@ -68,6 +68,16 @@
         "KoukoutuSVGPreview": {
             "display_name": "Koukoutu SVG Preview",
             "description": "Preview SVG vector graphics inside the node without any rendering dependency",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuImageTileflow": {
+            "display_name": "Koukoutu Image Tileflow",
+            "description": "Turn an image into a seamless tileable pattern using Koukoutu async API",
+            "category": "image/koukoutu"
+        },
+        "KoukoutuTilePreview": {
+            "display_name": "Koukoutu Tile Preview",
+            "description": "Tile the image N×N and preview it inside the node to check seamless pattern edges",
             "category": "image/koukoutu"
         }
     }

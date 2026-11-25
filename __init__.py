@@ -104,6 +104,22 @@ try:
 except Exception as e:
     print(f"Failed to load SVG Preview node: {e}")
 
+try:
+    from .nodes.image_tileflow import KoukoutuImageTileflow
+    NODE_CLASS_MAPPINGS["KoukoutuImageTileflow"] = KoukoutuImageTileflow
+    NODE_DISPLAY_NAME_MAPPINGS["KoukoutuImageTileflow"] = "抠抠图-四方连续图功能（无缝平铺）"
+    print("Koukoutu Image Tileflow node loaded successfully")
+except Exception as e:
+    print(f"Failed to load Image Tileflow node: {e}")
+
+try:
+    from .nodes.tile_preview import KoukoutuTilePreview
+    NODE_CLASS_MAPPINGS["KoukoutuTilePreview"] = KoukoutuTilePreview
+    NODE_DISPLAY_NAME_MAPPINGS["KoukoutuTilePreview"] = "抠抠图-九宫格平铺预览功能（四方连续检查）"
+    print("Koukoutu Tile Preview node loaded successfully")
+except Exception as e:
+    print(f"Failed to load Tile Preview node: {e}")
+
 if not NODE_CLASS_MAPPINGS:
     print("No Koukoutu nodes could be loaded. Please check your dependencies.")
 

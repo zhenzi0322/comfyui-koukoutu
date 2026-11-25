@@ -1,0 +1,60 @@
+{
+  "1": {
+    "inputs": {
+      "image": "QQ_2026-11-17_15-19-38.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像",
+      "cnr_id": "comfy-core",
+      "ver": "0.10.0"
+    }
+  },
+  "14": {
+    "inputs": {
+      "api_key": "你的api key",
+      "resolution": "1k",
+      "skip_error": true,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "KoukoutuImageTileflow",
+    "_meta": {
+      "title": "抠抠图-四方连续图功能（无缝平铺）",
+      "cnr_id": "koukoutu",
+      "ver": "1.0.7"
+    }
+  },
+  "15": {
+    "inputs": {
+      "tiles": 3,
+      "grid_lines": false,
+      "image": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "KoukoutuTilePreview",
+    "_meta": {
+      "title": "抠抠图-九宫格平铺预览功能（四方连续检查）",
+      "cnr_id": "koukoutu",
+      "ver": "1.0.7"
+    }
+  },
+  "17": {
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  }
+}
