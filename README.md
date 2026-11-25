@@ -289,6 +289,8 @@
 
 **输出：** `IMAGE` + `STRING`（成功/错误信息）
 
+![示例效果图](./images/image-tileflow.png)
+
 [下载四方连续图工作流](./workflows/image-tileflow.json)
 
 > 生成结果可用于面料、壁纸、包装等需要四方连续（无缝平铺）的场景。API Key 为空、网络异常、任务超时等错误同样写入 `message`，默认不中断工作流。
